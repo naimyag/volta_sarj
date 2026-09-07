@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volta Şarj — Gizlilik Politikası</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a;
+    --accent: #0b7d5a; --rule: #e3e3e3; --card: #f6f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a; --fg: #e8e8ea; --muted: #a0a4ab;
+      --accent: #4ecfa0; --rule: #2a2e35; --card: #1c1f25;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 44rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .35rem; }
+  h2 { font-size: 1.2rem; margin: 2.25rem 0 .6rem; padding-bottom: .35rem; border-bottom: 1px solid var(--rule); }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; color: var(--accent); }
+  p, li { color: var(--fg); }
+  .date { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+  .lead {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 1rem 1.15rem; border-radius: 6px; margin: 0 0 1.5rem;
+  }
+  .lead strong { color: var(--accent); }
+  ul { padding-left: 1.25rem; }
+  li { margin: .3rem 0; }
+  code {
+    background: var(--card); padding: .1rem .35rem; border-radius: 4px;
+    font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Volta Şarj — Gizlilik Politikası</h1>
+<p class="date">Son güncelleme: 8 Eylül 2026</p>
+
+<p class="lead">
+  <strong>Kısaca:</strong> Volta Şarj hiçbir kişisel veri toplamaz, internete veri göndermez ve
+  üçüncü taraflarla veri paylaşmaz. Uygulamanın işlediği her şey yalnızca sizin cihazınızda kalır.
+  Uygulamanın sunucusu yoktur.
+</p>
+
+<h2>Uygulamanın eriştiği veriler</h2>
+
+<h3>Bluetooth</h3>
+<p>
+  Volta Şarj, aracınızın batarya yönetim sistemine (BMS) bağlanmak için Bluetooth kullanır.
+  Bağlantı sırasında araçtan okunan bilgiler şunlardır:
+</p>
+<ul>
+  <li>Paket gerilimi ve akım</li>
+  <li>Şarj durumu (SoC) ve kapasite</li>
+  <li>Hücre gerilimleri ve sıcaklıklar</li>
+  <li>Arıza/uyarı durumları</li>
+  <li>Şarj döngüsü sayısı</li>
+</ul>
+<p>
+  Bu veriler yalnızca ekranda gösterilmek ve menzil tahmini hesaplanmak üzere kullanılır.
+  Cihazınızdan dışarı çıkmaz.
+</p>
+
+<h3>Konum</h3>
+<p>
+  Konum bilgisi yalnızca <strong>uygulama açıkken</strong> (When In Use) ve yalnızca iki amaçla
+  kullanılır:
+</p>
+<ul>
+  <li>Sürüş sırasında kat ettiğiniz gerçek mesafeyi ölçmek — bu, kalan menzil tahmininin
+      doğruluğunu artırır</li>
+  <li>Anlık hızı okumak — şarj ile rejeneratif frenlemeyi birbirinden ayırt etmek için</li>
+</ul>
+<p>
+  Konum geçmişiniz <strong>kaydedilmez ve iletilmez</strong>. Konum verisi anlık mesafe hesabında
+  kullanılır; cihazda kalıcı olarak saklanan tek sonuç, kişisel bilgi içermeyen bir enerji
+  verimliliği değeridir (Ah/km).
+</p>
+<p>
+  Konum izni vermezseniz uygulama çalışmaya devam eder; yalnızca menzil tahmini daha az hassas olur.
+</p>
+
+<h3>Cihazınızda saklanan bilgiler</h3>
+<ul>
+  <li>Son bağlandığınız Bluetooth cihazının kimliği ve adı</li>
+  <li>Öğrenilmiş enerji verimliliği değeri (Ah/km)</li>
+  <li>Elle girdiğiniz odometre değeri ve bundan hesaplanan şarj başına menzil</li>
+  <li>Son bilinen şarj durumu ve menzil tahmini (araç yakınınızda değilken göstermek için)</li>
+</ul>
+<p>
+  Bu bilgiler iOS'ta <code>NSUserDefaults</code>, Android'de <code>SharedPreferences</code> ile
+  yalnızca cihazınızın kendi depolamasında tutulur. Uygulamayı sildiğinizde tamamen silinirler.
+</p>
+
+<h2>Toplamadığımız şeyler</h2>
+<ul>
+  <li>Hesap oluşturma veya kayıt yoktur</li>
+  <li>Ad, e-posta, telefon numarası gibi hiçbir kişisel bilgi istenmez</li>
+  <li>Analitik, reklam veya kullanıcı izleme (tracking) araçları kullanılmaz</li>
+  <li>Üçüncü taraf veri toplayan SDK'lar bulunmaz</li>
+  <li>Reklam kimliği (IDFA) kullanılmaz</li>
+</ul>
+
+<h2>Veri paylaşımı</h2>
+<p>
+  Uygulama internete hiçbir veri göndermediği için üçüncü taraflarla paylaşılan bir veri yoktur.
+  Verileriniz satılmaz, kiralanmaz veya devredilmez.
+</p>
+
+<h2>Veri güvenliği ve saklama</h2>
+<p>
+  Tüm veriler cihazınızda, işletim sisteminin uygulama sanal alanı (sandbox) içinde saklanır ve
+  cihazınızın kendi güvenlik mekanizmalarıyla korunur. Belirli bir saklama süresi yoktur; veriler
+  siz uygulamayı silene kadar cihazınızda kalır.
+</p>
+
+<h2>Çocukların gizliliği</h2>
+<p>
+  Uygulama hiçbir kişisel veri toplamadığı için çocuklardan da veri toplamaz.
+</p>
+
+<h2>Haklarınız</h2>
+<p>
+  Cihazınızdaki tüm uygulama verilerini istediğiniz zaman uygulamayı silerek kaldırabilirsiniz.
+  Bize iletilen bir veriniz olmadığı için ayrıca bir silme veya erişim talebinde bulunmanız
+  gerekmez.
+</p>
+
+<h2>Bu politikadaki değişiklikler</h2>
+<p>
+  Politika güncellenirse bu sayfadaki "Son güncelleme" tarihi değiştirilir. Uygulamanın veri
+  işleme davranışı esaslı biçimde değişirse, değişiklik uygulama içinde de duyurulur.
+</p>
+
+<h2>İletişim</h2>
+<p>
+  Gizlilikle ilgili sorularınız için: <a href="mailto:naimyag81@gmail.com">naimyag81@gmail.com</a>
+</p>
+
+<footer>
+  Volta Şarj &middot; <code>com.naimyag.voltasarj</code>
+</footer>
+
+</main>
+</body>
+</html>

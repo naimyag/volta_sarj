@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volta Şarj</title>
+<meta name="description" content="Elektrikli aracınızın batarya yönetim sistemine Bluetooth ile bağlanıp gerçek zamanlı telemetri gösteren uygulama.">
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #16181d; --muted: #5c626b;
+    --accent: #0b7d5a; --rule: #e4e6e9; --card: #f6f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101216; --fg: #e9eaec; --muted: #9aa0a8;
+      --accent: #4ecfa0; --rule: #262a31; --card: #191c22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 3rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 3rem; }
+  header img {
+    width: 104px; height: 104px; border-radius: 23%;
+    box-shadow: 0 6px 24px rgba(0,0,0,.18); margin-bottom: 1rem;
+  }
+  h1 { font-size: 2.1rem; margin: 0 0 .4rem; letter-spacing: -.02em; }
+  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+  h2 { font-size: 1.25rem; margin: 2.5rem 0 .8rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rule); }
+  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .card { background: var(--card); border-radius: 10px; padding: 1.1rem 1.2rem; }
+  .card h3 { margin: 0 0 .35rem; font-size: 1rem; color: var(--accent); }
+  .card p { margin: 0; font-size: .94rem; color: var(--muted); }
+  ul { padding-left: 1.25rem; } li { margin: .35rem 0; }
+  .note {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 1rem 1.15rem; border-radius: 6px;
+  }
+  footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; text-align: center; }
+  a { color: var(--accent); }
+  code { background: var(--card); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <img src="icon.png" alt="Volta Şarj uygulama ikonu">
+  <h1>Volta Şarj</h1>
+  <p class="tagline">Elektrikli aracınızın bataryasını gerçek zamanlı izleyin.</p>
+</header>
+
+<p>
+  Volta Şarj, aracınızın batarya yönetim sistemine (BMS) Bluetooth ile bağlanır ve bataryanın
+  o anki durumunu telefonunuza taşır. Şarj seviyesinden tek tek hücre gerilimlerine kadar,
+  BMS'in bildiği her şeyi görürsünüz.
+</p>
+
+<h2>Neler yapıyor</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Canlı telemetri</h3>
+    <p>Paket gerilimi, akım, şarj durumu ve kapasite; sürüş sırasında anlık güç göstergesiyle.</p>
+  </div>
+  <div class="card">
+    <h3>Öğrenen menzil tahmini</h3>
+    <p>Sabit bir katsayı yerine, sizin gerçek sürüş verinizden öğrenilen tüketime ve batarya
+       sıcaklığına göre hesaplanır.</p>
+  </div>
+  <div class="card">
+    <h3>Hücre bazında detay</h3>
+    <p>Her hücrenin gerilimi, aralarındaki fark ve kritik eşik uyarıları.</p>
+  </div>
+  <div class="card">
+    <h3>Şarj takibi</h3>
+    <p>Duvar şarjını rejeneratif frenlemeden ayırt eder, dolum süresini ve tahmini bitiş saatini
+       gösterir.</p>
+  </div>
+  <div class="card">
+    <h3>Sıcaklık ve arızalar</h3>
+    <p>Hücre ve MOS sıcaklıkları, BMS'in bildirdiği arıza durumları önem sırasına göre.</p>
+  </div>
+  <div class="card">
+    <h3>Bağlantı kopsa da</h3>
+    <p>Araç yakınınızda değilken son bilinen durumu, ne zaman görüldüğü bilgisiyle gösterir.</p>
+  </div>
+</div>
+
+<h2>Gizlilik</h2>
+<div class="note">
+  <p>
+    Volta Şarj <strong>hiçbir veri toplamaz ve internete hiçbir şey göndermez.</strong> Sunucusu
+    yoktur, hesap açmanız gerekmez, analitik ve reklam içermez. Batarya verisi ve sürüş mesafesi
+    yalnızca telefonunuzda kalır.
+  </p>
+  <p style="margin-bottom:0">
+    Ayrıntılar: <a href="gizlilik.html">Gizlilik Politikası</a>
+  </p>
+</div>
+
+<h2>Platformlar</h2>
+<ul>
+  <li><strong>Android</strong> — 7.0 (API 24) ve üzeri</li>
+  <li><strong>iOS</strong> — 15.0 ve üzeri</li>
+</ul>
+
+<footer>
+  Volta Şarj &middot; <code>com.naimyag.voltasarj</code>
+</footer>
+
+</main>
+</body>
+</html>
