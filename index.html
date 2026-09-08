@@ -41,6 +41,19 @@
     background: var(--card); border-left: 3px solid var(--accent);
     padding: 1rem 1.15rem; border-radius: 6px;
   }
+  .dl { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .dl-card { background: var(--card); border-radius: 10px; padding: 1.25rem; }
+  .dl-card h3 { margin: 0 0 .2rem; font-size: 1.05rem; }
+  .dl-card .ver { color: var(--muted); font-size: .85rem; margin: 0 0 .9rem; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+  }
+  .btn.wait {
+    background: transparent; color: var(--muted); border: 1px solid var(--rule);
+    font-weight: 500; cursor: default;
+  }
+  .dl-note { margin: .9rem 0 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
   footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; text-align: center; }
   a { color: var(--accent); }
   code { background: var(--card); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -88,6 +101,31 @@
   <div class="card">
     <h3>Bağlantı kopsa da</h3>
     <p>Araç yakınınızda değilken son bilinen durumu, ne zaman görüldüğü bilgisiyle gösterir.</p>
+  </div>
+</div>
+
+<h2>İndir</h2>
+<div class="dl">
+  <div class="dl-card">
+    <h3>Android</h3>
+    <p class="ver">Android 7.0 ve üzeri</p>
+    <a class="btn" href="https://github.com/naimyag/volta_sarj/releases/latest/download/VoltaSarj.apk">
+      APK indir
+    </a>
+    <p class="dl-note">
+      Uygulama Google Play'de değil, bu yüzden telefonunuz kurulumdan önce izin isteyecek.
+      İndirdiğiniz dosyaya dokunun ve çıkan uyarıda bu kaynaktan kuruluma izin verin.
+    </p>
+  </div>
+  <div class="dl-card">
+    <h3>iPhone</h3>
+    <p class="ver">iOS 15.0 ve üzeri</p>
+    <span class="btn wait">TestFlight incelemesinde</span>
+    <p class="dl-note">
+      iOS sürümü TestFlight üzerinden dağıtılacak. Onay alındığında davet bağlantısı
+      buraya eklenecek; katılmak için telefonunuzda Apple'ın ücretsiz TestFlight
+      uygulaması gerekir.
+    </p>
   </div>
 </div>
 
