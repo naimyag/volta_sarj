@@ -98,10 +98,27 @@
   <li>Öğrenilmiş enerji verimliliği değeri (Ah/km)</li>
   <li>Elle girdiğiniz odometre değeri ve bundan hesaplanan şarj başına menzil</li>
   <li>Son bilinen şarj durumu ve menzil tahmini (araç yakınınızda değilken göstermek için)</li>
+  <li>Uygulama beklenmedik şekilde kapanırsa teknik hata kaydı ve Bluetooth bağlantı günlüğü
+      (aşağıya bakın)</li>
 </ul>
 <p>
   Bu bilgiler iOS'ta <code>NSUserDefaults</code>, Android'de <code>SharedPreferences</code> ile
   yalnızca cihazınızın kendi depolamasında tutulur. Uygulamayı sildiğinizde tamamen silinirler.
+</p>
+
+<h3>Bağlantı günlüğü ve hata kaydı</h3>
+<p>
+  Uygulama, Bluetooth bağlantısı sırasında ne olduğunu kaydeden teknik bir günlük tutar
+  (bağlanılan cihazın adı, Bluetooth servis kimlikleri, zamanlamalar ve hata mesajları).
+  Bu günlük normalde yalnızca bellekte tutulur ve uygulamayı kapattığınızda kaybolur;
+  yalnızca uygulama beklenmedik şekilde kapanırsa hata kaydıyla birlikte cihazınıza yazılır.
+</p>
+<p>
+  Amacı, yalnızca belirli telefon ve batarya modülü birleşimlerinde ortaya çıkan sorunların
+  çözülebilmesidir. Günlük <strong>konum, kişisel bilgi veya cihaz kimliği içermez</strong> ve
+  <strong>kendiliğinden hiçbir yere gönderilmez</strong> - yalnızca siz uygulama içinden
+  kopyalayıp bizimle paylaşmayı seçerseniz bize ulaşır. Ayarlar ekranından istediğiniz zaman
+  silebilirsiniz.
 </p>
 
 <h2>Toplamadığımız şeyler</h2>
