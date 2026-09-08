@@ -53,6 +53,12 @@
     background: transparent; color: var(--muted); border: 1px solid var(--rule);
     font-weight: 500; cursor: default;
   }
+  .rel { background: var(--card); border-radius: 10px; padding: 1.25rem 1.4rem; }
+  .rel-head { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-bottom: .8rem; }
+  .rel-ver { font-size: 1.1rem; font-weight: 700; }
+  .rel-date { color: var(--muted); font-size: .85rem; }
+  .rel ul { margin: 0; padding-left: 1.2rem; }
+  .rel li { margin: .35rem 0; font-size: .95rem; }
   .dl-note { margin: .9rem 0 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
   footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; text-align: center; }
   a { color: var(--accent); }
@@ -109,14 +115,13 @@
   <div class="dl-card">
     <h3>Android</h3>
     <p class="ver">Android 7.0 ve üzeri</p>
-    <a class="btn" href="https://github.com/naimyag/volta_sarj/releases/latest">
+    <a class="btn" href="https://github.com/naimyag/volta_sarj/releases/latest/download/VoltaSarj.apk">
       APK indir
     </a>
     <p class="dl-note">
-      Açılan sayfada, sürüm notlarının altındaki <strong>Assets</strong> bölümünden
-      <code>.apk</code> dosyasına dokunarak indirin. Uygulama Google Play'de olmadığı için
-      telefonunuz kurulumdan önce izin isteyecek; indirdiğiniz dosyaya dokunup çıkan uyarıda
-      bu kaynaktan kuruluma izin verin.
+      Uygulama Google Play'de olmadığı için telefonunuz kurulumdan önce izin isteyecek.
+      İndirdiğiniz dosyaya dokunun ve çıkan uyarıda bu kaynaktan kuruluma izin verin.
+      Güncellerken aynı dosyayı tekrar indirmeniz yeterli; üzerine kurulur.
     </p>
   </div>
   <div class="dl-card">
@@ -129,6 +134,25 @@
       uygulaması gerekir.
     </p>
   </div>
+</div>
+
+<h2>Sürüm notları</h2>
+<div class="rel">
+  <div class="rel-head">
+    <span class="rel-ver">1.0.02</span>
+    <span class="rel-date">8 Eylül 2026</span>
+  </div>
+  <ul>
+    <li>Bluetooth kapalıyken uygulamanın kapanması giderildi; artık nedenini açıklayan bir
+        ekran ve tek dokunuşla Bluetooth'u açma seçeneği var</li>
+    <li>Araca bağlandıktan sonra veri gelmeye başladığı anda oluşan kapanma giderildi</li>
+    <li>Bağlantı, batarya modülünün desteklediği yazma tipine göre kendini ayarlıyor</li>
+    <li>Ayarlar sekmesine bağlantı günlüğü eklendi: sorun yaşarsanız kopyalayıp
+        gönderebilirsiniz. Uygulama beklenmedik şekilde kapanırsa, tekrar açtığınızda
+        aynı ekranda hata raporu görünür</li>
+    <li>Gereksiz izinler kaldırıldı; uygulama artık yalnızca Bluetooth, konum ve internet
+        izni istiyor</li>
+  </ul>
 </div>
 
 <h2>Gizlilik</h2>
