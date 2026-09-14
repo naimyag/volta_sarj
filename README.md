@@ -8,17 +8,18 @@ durumunu gerçek zamanlı gösteren mobil uygulama.
 
 ## Neler yapıyor
 
-- **Canlı telemetri** — paket gerilimi, akım, şarj durumu (SoC), kapasite ve sürüş sırasında
-  anlık güç göstergesi
-- **Öğrenen menzil tahmini** — sabit bir katsayı yerine sizin gerçek sürüş verinizden öğrenilen
-  tüketime ve batarya sıcaklığına göre hesaplanır
-- **Hücre bazında detay** — her hücrenin gerilimi, aralarındaki fark ve kritik eşik uyarıları
-- **Şarj takibi** — duvar şarjını rejeneratif frenlemeden ayırt eder, dolum süresini ve tahmini
-  bitiş saatini gösterir
-- **Sıcaklık ve arıza durumları** — hücre/MOS sıcaklıkları, BMS'in bildirdiği arızalar önem
-  sırasına göre
-- **Çevrimdışı görünüm** — araç yakınınızda değilken son bilinen durumu, ne zaman görüldüğü
-  bilgisiyle gösterir
+- **Canlı batarya durumu** — doluluk, gerilim, akım ve kapasite; sürüşte güç göstergesi, şarjda
+  dolum bilgisi
+- **Şarj takibi ve alarm** — %80/%90/%100 için alarm; ne zaman biteceği şarj akımına göre
+  hesaplanır, uygulama kapalıyken de çalar
+- **Öğrenen menzil tahmini** — sürüşlerinizden öğrenilen tüketim ve batarya sıcaklığına göre;
+  aracın kilometresiyle kalibre edilebilir
+- **Hücre bazında detay** — her hücrenin gerilimi, aralarındaki fark, geride kalan hücre uyarısı
+- **Sıcaklık ve arıza durumları** — hücre/MOS sıcaklıkları, BMS arızaları önem sırasına göre
+- **Rejenerasyon ayrımı** — inişte üretilen enerji duvar şarjından ayırt edilir
+- **Sürüş penceresi (Android)** — doluluk, menzil ve akım diğer uygulamaların üstünde
+- **Çevrimdışı görünüm** — araç yakında değilken son bilinen durum ve ne zaman görüldüğü
+- **Gizlilik** — internete bağlanmaz, internet izni bile yok; veriler telefondan çıkmaz
 
 ## Platformlar
 
