@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Volta Şarj</title>
-<meta name="description" content="Elektrikli aracınızın bataryasını Bluetooth ile telefonunuzdan izleyin: doluluk, öğrenen menzil tahmini, şarj alarmı, hücre gerilimleri.">
+<meta name="description" content="Elektrikli aracınızın bataryasını Bluetooth ile telefonunuzdan izleyin: doluluk, öğrenen menzil tahmini, sürüş ve şarj kaydı, şarj alarmı, hücre gerilimleri.">
 <link rel="icon" href="icon.png">
 <style>
   :root {
@@ -45,8 +45,11 @@
   .shot p { margin: .6rem 0 0; font-size: .85rem; color: var(--muted); line-height: 1.4; }
   @media (min-width: 60rem) {
     main { max-width: 58rem; }
-    .shots { overflow: visible; justify-content: center; }
     .shot { width: 12.5rem; }
+  }
+  /* Altı görsel ancak bu genişlikte yan yana sığıyor; altında şerit yana kaydırılıyor. */
+  @media (min-width: 84rem) {
+    .shots { overflow: visible; justify-content: center; }
   }
   .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
   .card { background: var(--card); border-radius: 10px; padding: 1.1rem 1.2rem; }
@@ -98,19 +101,27 @@
 
 <div class="shots">
   <figure class="shot" style="margin:0">
-    <img src="ekran/sarj.webp" alt="Şarj ekranı: doluluk yüzdesi, tahmini dolum süresi ve kurulu şarj alarmı" loading="lazy" width="540" height="1212">
-    <p>Şarjda: dolum süresi ve kurulu alarm</p>
+    <img src="ekran/sarj.webp" alt="Şarj ekranı: doluluk yüzdesi, şarj olurken pilden yükselen kıvılcımlar, tahmini dolum süresi" loading="lazy" width="540" height="1080">
+    <p>Şarjda: dolum süresi ve alarm</p>
   </figure>
   <figure class="shot" style="margin:0">
-    <img src="ekran/surus.webp" alt="Sürüş ekranı: güç göstergesi ve tahmini menzil" loading="lazy" width="540" height="1212">
+    <img src="ekran/surus.webp" alt="Sürüş ekranı: güç göstergesi, tahmini menzil ve gerilim" loading="lazy" width="540" height="1080">
     <p>Sürüşte: güç göstergesi ve menzil</p>
   </figure>
   <figure class="shot" style="margin:0">
-    <img src="ekran/hucreler.webp" alt="Hücreler ekranı: 24 hücrenin gerilimleri ve sistem kontrolleri" loading="lazy" width="540" height="1212">
+    <img src="ekran/suruslar.webp" alt="Raporlar, Sürüşler sayfası: son şarjdan beri 39.9 km, tüketim ve verim" loading="lazy" width="540" height="1080">
+    <p>Sürüş kaydı ve raporlar</p>
+  </figure>
+  <figure class="shot" style="margin:0">
+    <img src="ekran/sarjlar.webp" alt="Raporlar, Şarjlar sayfası: şarj istasyonu sahnesi, son şarj ve toplam eklenen Ah" loading="lazy" width="540" height="1080">
+    <p>Şarj kaydı</p>
+  </figure>
+  <figure class="shot" style="margin:0">
+    <img src="ekran/hucreler.webp" alt="Hücreler ekranı: 24 hücrenin gerilimi, dengelenen hücreler" loading="lazy" width="540" height="1080">
     <p>Hücre hücre gerilimler</p>
   </figure>
   <figure class="shot" style="margin:0">
-    <img src="ekran/acik-tema.webp" alt="Açık temada park halindeki araç ekranı" loading="lazy" width="540" height="1212">
+    <img src="ekran/acik-tema.webp" alt="Açık temada park halindeki araç ekranı" loading="lazy" width="540" height="1080">
     <p>Açık ya da koyu tema</p>
   </figure>
 </div>
@@ -128,14 +139,24 @@
        Ne zaman biteceği o anki şarj akımına göre hesaplanır, uygulama kapalıyken de çalışır.</p>
   </div>
   <div class="card">
+    <h3>Sürüş kaydı ve raporlar</h3>
+    <p>Sürüşleriniz kaydedilir: mesafe, tüketim, kilometre başına Ah, hız ve grafikler.
+       Bugün, bu hafta ya da son şarjdan beri ne kadar yol gittiğinizi görün.</p>
+  </div>
+  <div class="card">
+    <h3>Şarj kaydı</h3>
+    <p>Her şarjın başlangıç ve bitiş doluluğu, eklenen Ah ve süresi. Uygulama bağlı değilken
+       yaptığınız şarj da bir sonraki bağlantıda doluluk farkından bulunur.</p>
+  </div>
+  <div class="card">
     <h3>Öğrenen menzil tahmini</h3>
     <p>Sabit bir katsayı yerine sizin sürüşlerinizden öğrenilen tüketime ve batarya sıcaklığına
        göre. Aracın kilometresini girerek tahmini kendi aracınıza kalibre edebilirsiniz.</p>
   </div>
   <div class="card">
     <h3>Hücre bazında detay</h3>
-    <p>Her hücrenin gerilimi, aralarındaki fark ve bir hücre geride kalırsa uyarı. Şarj ve
-       deşarj rölelerinin durumu.</p>
+    <p>Her hücrenin gerilimi, aralarındaki fark ve bir hücre geride kalırsa uyarı. BMS'in o an
+       dengelediği hücreler, koruma eşikleri, şarj ve deşarj rölelerinin durumu.</p>
   </div>
   <div class="card">
     <h3>Sıcaklık ve arızalar</h3>
@@ -148,9 +169,10 @@
        oluyor" demez.</p>
   </div>
   <div class="card">
-    <h3>Sürüş penceresi (Android)</h3>
-    <p>Navigasyon açıkken bile doluluk, menzil ve akım küçük bir pencerede diğer uygulamaların
-       üstünde kalır.</p>
+    <h3>Sürüş penceresi</h3>
+    <p>Araca bağlıyken uygulamadan çıkınca doluluk, menzil ve akım görünür kalır: Android'de
+       diğer uygulamaların üstünde küçük bir pencerede, iPhone'da kilit ekranında ve Dynamic
+       Island'da.</p>
   </div>
   <div class="card">
     <h3>Bağlantı kopsa da</h3>
@@ -177,12 +199,6 @@
       adresine Google hesabınızın e-postasıyla yazın; listeye eklendikten sonra yukarıdaki
       bağlantıyla katılabilirsiniz.
     </p>
-    <p class="dl-note" style="margin-top:1rem">
-      Beklemek istemiyorsanız
-      <a href="https://github.com/naimyag/volta_sarj/releases/latest/download/VoltaSarj.apk">APK'yı doğrudan indirin</a>.
-      Telefonunuz kurulumdan önce bu kaynaktan kuruluma izin isteyecek; güncellerken aynı
-      dosyayı tekrar indirmeniz yeterli, üzerine kurulur.
-    </p>
   </div>
   <div class="dl-card">
     <h3>iPhone</h3>
@@ -197,6 +213,38 @@
 </div>
 
 <h2>Sürüm notları</h2>
+<div class="rel">
+  <div class="rel-head">
+    <span class="rel-ver">1.0.07</span>
+    <span class="rel-date">25 Eylül 2026</span>
+  </div>
+  <ul>
+    <li><strong>Sürüş Kaydı.</strong> Araç sürülüyor görününce kaydetmek isteyip istemediğiniz
+        sorulur; bir kez &quot;Kaydet&quot; derseniz sonraki sürüşler sormadan kaydedilir. Aracın
+        km'sini girerek uygulama sayacını araçla eşitleyebilirsiniz</li>
+    <li><strong>Raporlar sekmesi.</strong> Sürüşler: mesafe, tüketim, Ah/km, ortalama hız,
+        grafikler ve sürüş ayrıntısı. Şarjlar: her şarjın başlangıç ve bitiş doluluğu, eklenen
+        Ah ve süre. &quot;Bu şarj / Bugün / Hafta / Tümü&quot; filtreleri</li>
+    <li><strong>Şarj kaydı.</strong> Uygulama bağlıyken ölçülür; bağlı değilken olan şarj bir
+        sonraki bağlantıda doluluk farkından tahmin edilir. Telefon ara ara kopup bağlansa da
+        bir şarj tek kayıt kalır</li>
+    <li><strong>iPhone'da sürüş penceresi:</strong> kilit ekranında ve Dynamic Island'da</li>
+    <li>Android'de sürüş penceresi araca bağlanınca kendiliğinden hazırlanır, uygulamadan
+        çıkınca görünür; uygulamayı görev listesinden kapatınca kapanır</li>
+    <li><strong>Hücreler:</strong> yeni görünüm; o an dengelenen hücreler; BMS'ten okunan
+        dengeleme ve koruma eşikleri; şarj ve deşarj rölelerinin gerçek durumu. Şarj sonunda
+        hücreler arasında doğal olarak açılan fark artık uyarı vermiyor</li>
+    <li><strong>Yeni görünüm ve animasyonlar:</strong> sayılar kayarak değişir; şarjda pilden
+        kıvılcımlar, rejeneratif frende yeşil dalga; raporlarda yol ve şarj istasyonu
+        sahneleri. Sürerken ekran sakin kalır, &quot;hareketi azalt&quot; açıksa animasyonlar
+        kapanır</li>
+    <li>Araca bağlanınca ve sürüş kaydedilince hafif titreşim</li>
+    <li>Aşağı çekip yenilemek canlı bağlantıyı koparmıyor</li>
+    <li>Açılış ekranı uygulamanın temasıyla açılıyor (Android 12 ve üstü)</li>
+    <li>Uygulama metinleri artık &quot;cihaz&quot; değil &quot;araç&quot; diyor</li>
+    <li>Uygulama 47 MB'tan 8 MB'a küçüldü (Android)</li>
+  </ul>
+</div>
 <div class="rel">
   <div class="rel-head">
     <span class="rel-ver">1.0.06</span>
