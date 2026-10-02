@@ -68,6 +68,9 @@
     display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
     padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
   }
+  .hero-dl { display: flex; gap: .7rem; justify-content: center; flex-wrap: wrap; margin-top: 1.4rem; }
+  .hero-dl .btn { padding: .75rem 1.3rem; font-size: 1rem; }
+  .hero-note { margin: .8rem 0 0; font-size: .85rem; color: var(--muted); }
   .btn.wait {
     background: transparent; color: var(--muted); border: 1px solid var(--rule);
     font-weight: 500; cursor: default;
@@ -91,6 +94,11 @@
   <img src="icon.png" alt="Volta Şarj uygulama ikonu">
   <h1>Volta Şarj</h1>
   <p class="tagline">Elektrikli aracınızın bataryası, cebinizde.</p>
+  <div class="hero-dl">
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.naimyag.voltasarj">Android: Google Play'den indir</a>
+    <a class="btn" href="https://testflight.apple.com/join/pmJurW2P">iPhone: TestFlight'a katıl</a>
+  </div>
+  <p class="hero-note">Her iki sürüm de test aşamasında. <a href="#indir">Kurulum ayrıntıları</a></p>
 </header>
 
 <p class="lead">
@@ -186,7 +194,7 @@
   </div>
 </div>
 
-<h2>İndir</h2>
+<h2 id="indir">İndir</h2>
 <div class="dl">
   <div class="dl-card">
     <h3>Android</h3>
