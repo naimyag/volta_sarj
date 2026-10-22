@@ -46,7 +46,7 @@
 <main>
 
 <h1>Volta Şarj — Gizlilik Politikası</h1>
-<p class="date">Son güncelleme: 8 Eylül 2026</p>
+<p class="date">Son güncelleme: 23 Ekim 2026</p>
 
 <p class="lead">
   <strong>Kısaca:</strong> Volta Şarj hiçbir kişisel veri toplamaz, internete veri göndermez ve
@@ -75,18 +75,22 @@
 
 <h3>Konum</h3>
 <p>
-  Konum bilgisi yalnızca <strong>uygulama açıkken</strong> (When In Use) ve yalnızca iki amaçla
+  Konum bilgisi yalnızca <strong>uygulama açıkken</strong> (When In Use) ve yalnızca üç amaçla
   kullanılır:
 </p>
 <ul>
   <li>Sürüş sırasında kat ettiğiniz gerçek mesafeyi ölçmek — bu, kalan menzil tahmininin
       doğruluğunu artırır</li>
   <li>Anlık hızı okumak — şarj ile rejeneratif frenlemeyi birbirinden ayırt etmek için</li>
+  <li>Araçtan uzaklaştığınızda aracın Bluetooth bağlantısının koptuğu yeri "son park edilen yer"
+      olarak göstermek</li>
 </ul>
 <p>
   Konum geçmişiniz <strong>kaydedilmez ve iletilmez</strong>. Konum verisi anlık mesafe hesabında
-  kullanılır; cihazda kalıcı olarak saklanan tek sonuç, kişisel bilgi içermeyen bir enerji
-  verimliliği değeridir (Ah/km).
+  kullanılır. Cihazda saklanan tek konum, <strong>son park edilen yer</strong>dir: tek bir nokta,
+  yalnızca bu telefonda tutulur, araca yeniden bağlandığınızda silinir ve Android bulut
+  yedeğine alınmaz. Sürüş kayıtlarında konum bulunmaz. Park yerini haritada açmayı seçtiğinizde
+  bu nokta yalnızca sizin seçtiğiniz harita uygulamasına verilir.
 </p>
 <p>
   Konum izni vermezseniz uygulama çalışmaya devam eder; yalnızca menzil tahmini daha az hassas olur.
@@ -94,9 +98,11 @@
 
 <h3>Cihazınızda saklanan bilgiler</h3>
 <ul>
-  <li>Son bağlandığınız Bluetooth cihazının kimliği ve adı</li>
+  <li>Bağlandığınız araçların Bluetooth kimliği ve onlara verdiğiniz adlar</li>
   <li>Öğrenilmiş enerji verimliliği değeri (Ah/km)</li>
-  <li>Elle girdiğiniz odometre değeri ve bundan hesaplanan şarj başına menzil</li>
+  <li>Elle girdiğiniz araç kilometresi (yalnızca toplam kilometreyi göstermek için)</li>
+  <li>Son park edilen yer (araca yeniden bağlandığınızda silinir)</li>
+  <li>Sürüş ve şarj kayıtları (mesafe, süre, doluluk; konum içermez)</li>
   <li>Son bilinen şarj durumu ve menzil tahmini (araç yakınınızda değilken göstermek için)</li>
   <li>Uygulama beklenmedik şekilde kapanırsa teknik hata kaydı ve Bluetooth bağlantı günlüğü
       (aşağıya bakın)</li>
